@@ -1,9 +1,10 @@
 const mysql = require("mysql2");
 
 const db = mysql.createConnection({
-  socketPath: "/tmp/mysql.sock",
+  host: "localhost",
+  port: 3306,
   user: "root",
-  password: "Password",
+  password: "devikrishna",
   database: "hospital_db"
 });
 
