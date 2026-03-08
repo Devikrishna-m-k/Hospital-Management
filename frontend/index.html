@@ -1,106 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="lemonade">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hospital Management System</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome for Icons -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
+  <title>Hospital Management System | MedCore</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.3/dist/full.min.css" rel="stylesheet">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Navigation Bar -->
-  <nav class="navbar navbar-dark bg-dark">
-    <div class="container-fluid">
-      <span class="navbar-brand mb-0 h1"><i class="fas fa-hospital-user"></i> Hospital Management System</span>
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    
+    .bg-pattern {
+      background-image: radial-gradient(hsl(var(--bc) / 0.08) 1.5px, transparent 1.5px);
+      background-size: 24px 24px;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex flex-col bg-gradient-to-br from-base-200 via-base-100 to-base-200 bg-pattern text-base-content selection:bg-primary selection:text-primary-content">
+
+  <nav class="navbar bg-base-100/70 backdrop-blur-lg sticky top-0 z-50 border-b border-base-content/5 px-4 lg:px-8">
+    <div class="flex-1 gap-3">
+      <div class="bg-primary/10 text-primary p-2 rounded-xl">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+          <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 7.5a.75.75 0 00-1.5 0v3.75H7.5a.75.75 0 000 1.5h3.75v3.75a.75.75 0 001.5 0v-3.75h3.75a.75.75 0 000-1.5h-3.75V7.5z" clip-rule="evenodd" />
+        </svg>
+      </div>
+      <a class="text-xl font-bold tracking-tight">Med<span class="text-primary">Core</span></a>
     </div>
   </nav>
 
-  <div class="container mt-4">
-    <div class="row">
-      <div class="col-12">
-        <h1 class="mb-4"><i class="fas fa-home"></i> Welcome to Hospital Management</h1>
-        <p id="status" class="alert alert-info mb-4">
-          <i class="fas fa-spinner fa-spin"></i> Checking backend...
+  <main class="flex-grow flex items-center justify-center p-6 sm:p-12">
+    <div class="max-w-6xl w-full mx-auto flex flex-col items-center">
+      
+      <div class="text-center space-y-6 mb-16 max-w-2xl">
+        <div class="inline-flex items-center justify-center p-4 bg-base-100 shadow-sm rounded-full mb-2 border border-base-content/5 ring-4 ring-primary/5">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-primary">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+          </svg>
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-base-content leading-tight">
+          Modern Healthcare <br class="hidden sm:block"/> 
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">At Your Fingertips</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-base-content/60 font-medium">
+          Choose your portal to manage appointments, records, and billing with our secure and intuitive platform.
         </p>
       </div>
-    </div>
 
-    <div class="row">
-      <div class="col-12">
-        <h2 class="mb-4"><i class="fas fa-th-large"></i> Modules</h2>
-        <div class="row">
-          <div class="col-md-6 col-lg-3 mb-3">
-            <a href="doctors.html" class="card text-decoration-none text-dark h-100">
-              <div class="card-body text-center">
-                <i class="fas fa-user-md fa-3x mb-3" style="color: #3498db;"></i>
-                <h5 class="card-title">Doctors</h5>
-                <p class="card-text">Manage doctors and specializations</p>
-              </div>
-            </a>
-          </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl relative z-10">
+        
+        <div class="group card bg-base-100/80 backdrop-blur-sm border border-base-content/5 shadow-xl hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 ease-out">
+          <div class="card-body p-8 sm:p-10 items-center text-center">
+            
+            <div class="w-32 h-32 mb-6 mask mask-squircle bg-base-200 flex items-center justify-center group-hover:-translate-y-2 transition-transform duration-500 overflow-hidden shadow-inner">
+              <img src="./public/doctor.png" alt="Doctor Illustration" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out" />
+            </div>
 
-          <div class="col-md-6 col-lg-3 mb-3">
-            <a href="patients.html" class="card text-decoration-none text-dark h-100">
-              <div class="card-body text-center">
-                <i class="fas fa-users fa-3x mb-3" style="color: #27ae60;"></i>
-                <h5 class="card-title">Patients</h5>
-                <p class="card-text">Manage patient information</p>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-6 col-lg-3 mb-3">
-            <a href="appointments.html" class="card text-decoration-none text-dark h-100">
-              <div class="card-body text-center">
-                <i class="fas fa-calendar-alt fa-3x mb-3" style="color: #f39c12;"></i>
-                <h5 class="card-title">Appointments</h5>
-                <p class="card-text">Schedule appointments</p>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-6 col-lg-3 mb-3">
-            <a href="bills.html" class="card text-decoration-none text-dark h-100">
-              <div class="card-body text-center">
-                <i class="fas fa-receipt fa-3x mb-3" style="color: #e74c3c;"></i>
-                <h5 class="card-title">Bills</h5>
-                <p class="card-text">Generate and manage bills</p>
-              </div>
-            </a>
+            <h2 class="card-title text-2xl font-bold mb-2">Doctor Portal</h2>
+            <p class="text-base-content/60 mb-8 leading-relaxed">Access patient records, manage daily appointments, and process bills securely through the staff dashboard.</p>
+            <div class="card-actions w-full">
+              <a href="doctor/dashboard.html" class="btn btn-primary btn-block text-base group/btn h-14">
+                Enter Doctor Dashboard
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 ml-1 transform group-hover/btn:translate-x-1 transition-transform">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
+
+        <div class="group card bg-base-100/80 backdrop-blur-sm border border-base-content/5 shadow-xl hover:shadow-2xl hover:shadow-secondary/20 hover:-translate-y-2 transition-all duration-300 ease-out">
+          <div class="card-body p-8 sm:p-10 items-center text-center">
+            
+            <div class="w-32 h-32 mb-6 mask mask-squircle bg-base-200 flex items-center justify-center group-hover:-translate-y-2 transition-transform duration-500 overflow-hidden shadow-inner">
+               <img src="./public/patient.png" alt="Patient Illustration" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out" />
+            </div>
+
+            <h2 class="card-title text-2xl font-bold mb-2">Patient Portal</h2>
+            <p class="text-base-content/60 mb-8 leading-relaxed">Book new appointments, view your medical history, and handle payments in your personal dashboard.</p>
+            <div class="card-actions w-full">
+              <a href="patient/dashboard.html" class="btn btn-secondary btn-block text-base group/btn h-14">
+                Enter Patient Dashboard
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 ml-1 transform group-hover/btn:translate-x-1 transition-transform">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
-  </div>
+  </main>
 
-  <!-- Footer -->
-  <footer class="bg-dark text-white text-center mt-5 py-4">
-    <p>&copy; 2026 Hospital Management System. All rights reserved.</p>
+  <footer class="footer footer-center p-6 text-base-content/50 mt-auto border-t border-base-content/5 bg-base-100/50 backdrop-blur-sm">
+    <aside>
+      <p>Copyright © 2026 - MedCore Healthcare Systems. All rights reserved.</p>
+    </aside>
   </footer>
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    fetch("http://localhost:5000")
-      .then(res => res.text())
-      .then(data => {
-        const statusEl = document.getElementById("status");
-        statusEl.textContent = data;
-        statusEl.classList.remove("alert-info");
-        statusEl.classList.add("alert-success");
-      })
-      .catch(() => {
-        const statusEl = document.getElementById("status");
-        statusEl.textContent = "⚠️ Backend not reachable";
-        statusEl.classList.remove("alert-info");
-        statusEl.classList.add("alert-danger");
-      });
-  </script>
 
 </body>
 </html>
