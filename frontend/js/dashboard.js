@@ -49,7 +49,7 @@ label: "Appointments",
 
 data: values,
 
-borderColor: "#63f190",
+borderColor: "#10b921",
 backgroundColor: "rgba(99, 241, 158, 0.1)",
 
 tension: 0.4,
@@ -118,7 +118,7 @@ label: "Revenue",
 
 data: values,
 
-backgroundColor: "#10b981",
+backgroundColor: "#10b921",
 borderRadius: 6,
 barThickness: 40
 }]
